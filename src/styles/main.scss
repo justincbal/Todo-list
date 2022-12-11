@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+$Green: #3C5148;
+$Light-green: #8AADA9;
+$White: #E0E9F0;
+$Red: #AD8A8A;
+
+html {
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    font-family: inherit;
+}
