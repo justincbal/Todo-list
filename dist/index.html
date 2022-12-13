@@ -43,7 +43,7 @@
             <div class="listing">
 
                 <div class="list planned">
-                    <h2>Planned</h2>
+                    <h2 class="hd">Planned</h2>
                     <div class="task">
                         <input type="checkbox" name="" id="">
                         <label for="">Something</label>
@@ -52,20 +52,43 @@
                         <input type="checkbox" name="" id="">
                         <label for="">Something</label>
                     </div>
+                    <div class="task">
+                        <input type="checkbox" name="" id="">
+                        <label for="">Something</label>
+                    </div>
+                    <div class="task">
+                        <input type="checkbox" name="" id="">
+                        <label for="">Something</label>
+                    </div>
+                    
                 </div>
 
                 <div class="list progress">
-                    <h2>Progress</h2>
+                    <h2 class="hd">Progress</h2>
                 </div>
 
                 <div class="list completed">
-                    <h2>Completed</h2>
+                    <h2 class="hd">Completed</h2>
 
                 </div>
             </div>
         </div>
 
-        <!-- Add project -->
+        <!-- Add task -->
+        <div class="task-form">
+            <h2 class="task-formHeading">Create task</h2>
+
+            <div class="form">
+                <input type="text" name="taskName" id="taskName" placeholder="Name">
+                <input type="text" name="taskDesc" id="taskDesc" placeholder="Description" class="taskDesc">
+                <input type="date" name="taskDate" id="taskDate">
+
+                <div class="task-form-buttons">
+                    <button class="task-btn cancel">Cancel</button>
+                    <button class="task-btn add">Add</button>
+                </div>
+            </div>
+        </div>
         
 
     </div>

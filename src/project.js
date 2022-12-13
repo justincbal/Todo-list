@@ -1,6 +1,13 @@
+import { Task } from './task';
+
 class Project {
     constructor(name) {
         this._projectName = name;
+        this._projectList = [];
+    }
+
+    addList(obj) {
+        
     }
 }
 
@@ -17,7 +24,13 @@ function createProject(){
     div.append(h2);
     div.append(btn);
     sideNav.append(div);
+
+    const proj = new Project(projName.value);
+    console.log(proj);
+
     projName.value = "";
+
+
 
     btn.addEventListener('click', deleteProject);
 }

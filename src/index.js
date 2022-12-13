@@ -1,9 +1,11 @@
 import './styles/main.scss';
 import { Project, createProject } from './project';
+import { createTask } from './task';
 const taskBtn = document.querySelector('.taskbtn');
-const delProj = document.querySelectorAll('.projDel');
+const addList = document.querySelector('.addList');
 
 // Create a project
  taskBtn.addEventListener('click', createProject);
 
-//  Delete a project
+// Create a task
+addList.addEventListener('click', createTask);
