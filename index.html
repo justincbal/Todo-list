@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <title>TODO</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
         <div class="side-nav">
 
             <div class="nav-header">
-                <h2>Projects</h2>
+                <input type="text" placeholder="Add Project" class="projName">
                 <button class="taskbtn">+</button>
             </div>
 
@@ -30,24 +30,43 @@
 
             <div class="nav-project">
                 <h2>Personal</h2>
-                <button></button>
+                <button class="projDel"></button>
             </div>
             
         </div>
 
         <!-- Task list area -->
         <div class="list-area">
+            <h2 class="list-heading">This</h2>
+            <button class="addList">Add Task</button>
 
+            <div class="listing">
+
+                <div class="list planned">
+                    <h2>Planned</h2>
+                    <div class="task">
+                        <input type="checkbox" name="" id="">
+                        <label for="">Something</label>
+                    </div>
+                    <div class="task">
+                        <input type="checkbox" name="" id="">
+                        <label for="">Something</label>
+                    </div>
+                </div>
+
+                <div class="list progress">
+                    <h2>Progress</h2>
+                </div>
+
+                <div class="list completed">
+                    <h2>Completed</h2>
+
+                </div>
+            </div>
         </div>
 
         <!-- Add project -->
-        <div class="add-proj">
-            <input type="text" name="projName" id="projName" placeholder="Project Name">
-            <div class="buttons">
-                <button>Cancel</button>
-                <button>Add</button>
-            </div>
-        </div>
+        
 
     </div>
     
