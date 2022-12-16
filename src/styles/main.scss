@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import './mixin';
+
 
 $Green: #3C5148;
 $Light-green: #8AADA9;
@@ -27,6 +29,7 @@ body {
 #content {
     display: grid;
     grid-template-columns: 380px 4fr;
+    grid-template-rows: 200px 100vh;
     grid-template-areas: 
     "hd hd hd hd hd"
     "sd mn mn mn mn"
@@ -36,10 +39,107 @@ body {
 
     .main-heading-section {
         grid-area: hd;
+
+        background-color: $Green;
+        color: $White;
+        font-size: 2rem;
+        @include flexCenter;
+
     }
 
     .side-navigation {
         grid-area: sd;
+        background-color: $Light-green;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        .nav-heading {
+            background-color: $Green;
+            font-size: 2rem;
+            color: $White;
+            height: 60px;
+            width: 80%;
+            @include flexCenter;
+        }
+
+        .add-project-form {
+            width: 80%;
+            display: flex;
+            height: 50px;
+
+        .project-input {
+            flex-grow: 1;
+            border: none;
+            font-size: 1.2rem;
+            padding-left: 10px;
+
+            &:focus {
+                outline: none;
+            }
+
+        }
+
+        .project-button {
+            width: 50px;
+            border: none;
+            background-color: $Green;
+            color: $White;
+            font-size: 2rem;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #3c5148b7;
+            }
+        }
+        }
+
+        .project-list {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .project {
+                display: flex;
+                height: 50px;
+                @include flexCenter;
+                border-left: $Green 1px solid;
+
+                
+
+                .delete-project-button {
+                    background-color: $Red;
+                    border: none;
+                    width: 50px;
+                    height: 50px;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $White;
+                        font-weight: 900;
+                    }
+
+                }
+
+                .project-name {
+                    color: $Green;
+                    flex-grow: 1;
+                    padding-left: 10px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+
+                    &:hover{
+                        color: $White;
+                        cursor: pointer;
+                        
+                    }
+                }
+            }
+
+        }
     }
 
     .list-section {
