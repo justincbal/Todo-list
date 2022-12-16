@@ -24,3 +24,25 @@ body {
     font-family: inherit;
 }
 
+#content {
+    display: grid;
+    grid-template-columns: 380px 4fr;
+    grid-template-areas: 
+    "hd hd hd hd hd"
+    "sd mn mn mn mn"
+    "sd mn mn mn mn"
+    "sd mn mn mn mn"
+    ;
+
+    .main-heading-section {
+        grid-area: hd;
+    }
+
+    .side-navigation {
+        grid-area: sd;
+    }
+
+    .list-section {
+        grid-area: mn;
+    }
+}
