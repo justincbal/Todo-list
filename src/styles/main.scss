@@ -225,6 +225,11 @@ body {
             }
         }
     }
+
+    
+    
+    
+
 }
 
 .planned {
@@ -242,4 +247,70 @@ body {
 .task-completed {
     font-style: italic;
     text-decoration: line-through;
+}
+
+.blur {
+    display: none;
+    position: absolute;
+    backdrop-filter: blur(1rem);
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+
+    .task-form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+    
+        width: clamp(500px, 100%, 900px);
+        height: 200px;
+        background-color: $White;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        input, select {
+            width: 50%;
+            height: 40px;
+            font-size: 1.3rem;
+            padding-left: 10px;
+        }
+
+        .task-form-buttons {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+
+            .cancel-button {
+                background-color: $Red;
+                height: 40px;
+                border: none;
+                width: 100px;
+                font-size: 1.3rem;
+                color: $White;
+                font-weight: 900;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            .submit-button {
+                background-color: $Light-green;
+                height: 40px;
+                border: none;
+                width: 100px;
+                font-size: 1.3rem;
+                color: $White;
+                font-weight: 900;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
 }
