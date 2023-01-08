@@ -4,9 +4,11 @@ class Project {
     constructor(name, id) {
         this._projectName = name;
         this._projectID = id;
+        this._taskID = 0;
         this._taskList = [];
 
-        console.log(`New project has been created. NAME: ${this._projectName} | ID: ${this._projectID}`);
+        console.clear();
+        console.log(`\nProject created:\nName: ${this._projectName}\nID: ${this._projectID}\n\n`);
     }
 
    
