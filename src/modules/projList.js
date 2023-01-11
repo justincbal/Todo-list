@@ -125,7 +125,51 @@ class ProjectList {
         listButton.addEventListener('click', () => {
             this.taskForm();
         })
+
+        this.tasks();
     }
+
+    deleteTask(id) {
+        for(const i in this.projList[this.currentProjectID]._taskList) {
+            if (this.projList[this.currentProjectID]._taskList[i]._id == id) {
+                this.projList[this.currentProjectID]._taskList.splice(i, 1);
+            }
+        }
+        this.saveLocal();
+        this.displayTasks();
+    }
+
+    tasks() {
+        const listSection = document.querySelector('.list-section');
+        for(const i in this.projList[this.currentProjectID]._taskList) {
+            const taskList = document.createElement('div');
+            taskList.classList.add('task-list');
+            taskList.setAttribute('id', this.projList[this.currentProjectID]._taskList[i]._id);
+            const task = document.createElement('div');
+            task.classList.add('task');
+            const check = document.createElement('input');
+            check.type = 'checkbox';
+            check.classList.add('task-checkbox');
+            const h3 = document.createElement('h3');
+            h3.classList.add('task-name');
+            h3.textContent = this.projList[this.currentProjectID]._taskList[i]._name;
+            
+
+            task.append(check);
+            task.append(h3);
+
+            taskList.append(task);
+            listSection.append(taskList);
+
+            // Check
+            check.addEventListener('click', (e) => {
+                this.deleteTask(e.target.parentNode.parentNode.id);
+                //console.log(e.target.parentNode.parentNode.id);
+            })
+        }
+    }
+
+    
 
     taskForm() {
         console.clear();
@@ -133,6 +177,7 @@ class ProjectList {
         const blur = document.querySelector('.blur');
         const status = document.querySelector('#status');
         const taskName = document.querySelector('#taskName');
+        var obj = this;
        
         blur.style.display = 'block';
 
@@ -142,24 +187,30 @@ class ProjectList {
             taskName.value = "";
         })
 
-        // TODO: Fix reference to this object
 
         const submit = document.querySelector('.submit-button');
         submit.addEventListener('click', function handler(){
             console.log('Submit called');
             blur.style.display = 'none';
-            const task = new Task(taskName.value, status.value, this.projList[this.currentProjectID]._taskID++);
-            this.projList[this.currentProjectID]._taskList.push(task);
-            
-            console.log(this);
+            const task = new Task(taskName.value, obj.projList[obj.currentProjectID]._taskID++);
+
+            // console.log(this); button
+            // console.log(obj); this object
+            // console.log(task); task
+
+            obj.projList[obj.currentProjectID]._taskList.push(task);
+            console.log(obj);
+
+            taskName.value = "";
+            obj.saveLocal();
+            obj.displayTasks();
+
             this.removeEventListener('click', handler);
 
         })
-
-        function handleSubmit() {
-            
-        }
     }
+
+    
 
     
 }

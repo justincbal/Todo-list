@@ -1,7 +1,6 @@
 class Task {
-    constructor(name, status = 'planned', id) {
+    constructor(name, id) {
         this._name = name;
-        this._status = status;
         this._id = id;
     }   
  }
